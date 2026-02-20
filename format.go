@@ -5,11 +5,11 @@ import "fmt"
 func getIcon(activeState string) string {
 	switch activeState {
 	case "active":
-		return "●"
+		return "<span color='#00FF88'>●</span>"
 	case "failed":
-		return "✗"
+		return "<span color='#FF5555'>✗</span>"
 	default:
-		return "○"
+		return "<span color='#bbbbbb'>○</span>"
 	}
 }
 
@@ -27,8 +27,9 @@ func formatServices(services []serviceInfo) ([]string, map[int]serviceInfo) {
 	for i, s := range services {
 		icon := getIcon(s.activeState)
 		paddedName := fmt.Sprintf("%-*s", maxNameLen, s.name)
-		result = append(result, fmt.Sprintf("[%s] %s %s %s %s",
+		result = append(result, fmt.Sprintf("[%s] %s <span color='#646464'>%s %s %s</span>",
 			icon, paddedName, s.activeState, s.subState, s.enabled))
+
 		serviceMap[i] = s
 	}
 	return result, serviceMap

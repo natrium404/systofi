@@ -17,6 +17,8 @@ func runRofi(items []string, prompt string) string {
 		"-format", "s",
 		"-width", "60",
 		"-lines", "15",
+		"-markup-rows",
+		"-theme", "/home/natrium/.config/rofi/main.rasi",
 	}
 
 	rofiCmd := exec.Command("rofi", rofiArgs...)
