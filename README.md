@@ -148,7 +148,7 @@ go run .
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Copyright (c) 2025 Natrium
+Copyright (c) 2026 Natrium
 
 ## Acknowledgments
 
@@ -156,4 +156,5 @@ Copyright (c) 2025 Natrium
 - [systemd](https://systemd.io/) - The system and service manager
 
 ## Fin
-![[https://i.pinimg.com/originals/eb/ec/d4/ebecd4010e549f33371d741d46b9b607.gif]]
+
+![Fin](https://i.pinimg.com/originals/eb/ec/d4/ebecd4010e549f33371d741d46b9b607.gif)
