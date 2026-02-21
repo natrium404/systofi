@@ -155,6 +155,6 @@ Copyright (c) 2026 Natrium
 - [rofi](https://github.com/davatorium/rofi) - The application launcher and window manager
 - [systemd](https://systemd.io/) - The system and service manager
 
-## Fin
+## FIN
 
-![Fin](https://i.pinimg.com/originals/eb/ec/d4/ebecd4010e549f33371d741d46b9b607.gif)
+![Fin](https://i.pinimg.com/736x/2e/c1/b5/2ec1b50b48eae8c637dc5d7c98a3a957.jpg)
