@@ -10,6 +10,7 @@
 # Build output
 /build/
 bin/
+systofi
 
 # Go workspace
 go.work

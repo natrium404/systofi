@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"os/exec"
 	"strings"
 )
@@ -18,7 +19,10 @@ func runRofi(items []string, prompt string) string {
 		"-width", "60",
 		"-lines", "15",
 		"-markup-rows",
-		"-theme", "/home/natrium/.config/rofi/main.rasi",
+	}
+
+	if themePath := os.Getenv("SYSTOFI_ROFI_THEME"); themePath != "" {
+		rofiArgs = append(rofiArgs, "-theme", themePath)
 	}
 
 	rofiCmd := exec.Command("rofi", rofiArgs...)
