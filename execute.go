@@ -32,9 +32,9 @@ func executeAction(service, action string) {
 }
 
 func extractServiceName(selection string) string {
-	fields := strings.Fields(selection)
-	if len(fields) >= 2 {
-		return fields[1]
+	if idx := strings.Index(selection, ".service"); idx != -1 {
+		start := strings.LastIndex(selection[:idx], " ") + 1
+		return selection[start : idx+8]
 	}
 	return ""
 }

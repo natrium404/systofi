@@ -34,16 +34,22 @@ func getServiceInfo(service string) serviceInfo {
 	canStop := true
 	canReload := false
 
-	for _, line := range propsLines {
-		if after, ok := strings.CutPrefix(line, "CanStart="); ok {
-			canStart = after == "yes"
+	for i, line := range propsLines {
+		if i == 0 && line != "" {
+			canStart = line == "yes"
 		}
-		if after, ok := strings.CutPrefix(line, "CanStop="); ok {
-			canStop = after == "yes"
+		if i == 1 && line != "" {
+			canStop = line == "yes"
 		}
-		if after, ok := strings.CutPrefix(line, "CanReload="); ok {
-			canReload = after == "yes"
+		if i == 2 && line != "" {
+			canReload = line == "yes"
 		}
+	}
+
+	if activeStr == "active" {
+		canStart = false
+	} else if activeStr == "inactive" || activeStr == "failed" {
+		canStop = false
 	}
 
 	cmd = exec.Command("systemctl", "is-enabled", service)
